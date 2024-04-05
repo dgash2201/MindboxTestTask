@@ -1,4 +1,4 @@
-﻿namespace FiguresLibrary.Figures
+﻿namespace FigureLibrary.Figures
 {
     /// <summary>
     /// Интерфейс фигуры

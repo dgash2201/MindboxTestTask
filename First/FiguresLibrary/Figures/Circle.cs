@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace FiguresLibrary.Figures
+namespace FigureLibrary.Figures
 {
     /// <summary>
     /// Круг

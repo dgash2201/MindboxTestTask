@@ -1,9 +1,13 @@
-﻿using FiguresLibrary.Figures;
+﻿using FigureLibrary.Figures;
 
-namespace FiguresLibrary.Tests
+namespace FigureLibrary.Tests
 {
     public class CircleTests
     {
+        /// <summary>
+        /// Исключение не выбрасывается, если радиус круга корректен
+        /// </summary>
+        /// <param name="radius">Радиус круга</param>
         [Theory]
         [InlineData(1.0)]
         public void NotThrowIfRadiusIsCorrect(double radius)
@@ -12,16 +16,23 @@ namespace FiguresLibrary.Tests
             Assert.Null(exception);
         }
 
-
+        /// <summary>
+        /// Выбрасывается исключение, если радиус круга неположителен
+        /// </summary>
+        /// <param name="radius">Радиус круга</param>
         [Theory]
         [InlineData(0.0)]
         [InlineData(-2.0)]
         public void ThrowsIfRadiusIsNotPositive(double radius)
         {
-            var message = $"Круг с радиусом {radius} создан успешно, хотя он неположительный";
             Assert.Throws<ArgumentException>(() => new Circle(radius));
         }
 
+        /// <summary>
+        /// Высчитывается ли площадь корретно
+        /// </summary>
+        /// <param name="radius">Радиус круга</param>
+        /// <param name="expected">Ожидаемое значение площади</param>
         [Theory]
         [InlineData(1.0, Math.PI)]
         public void CalculateAreaCorrectly(double radius, double expected)
