@@ -1,4 +1,4 @@
-using FiguresLibrary.Figures;
+п»їusing FiguresLibrary.Figures;
 
 namespace FiguresLibrary.Tests
 {
@@ -18,7 +18,7 @@ namespace FiguresLibrary.Tests
         [InlineData(-2.0)]
         public void ThrowsIfRadiusIsNotPositive(double radius)
         {
-            var message = $"Круг с радиусом {radius} создан успешно, хотя он неположительный";
+            var message = $"РљСЂСѓРі СЃ СЂР°РґРёСѓСЃРѕРј {radius} СЃРѕР·РґР°РЅ СѓСЃРїРµС€РЅРѕ, С…РѕС‚СЏ РѕРЅ РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Р№";
             Assert.Throws<ArgumentException>(() => new Circle(radius));
         }
 

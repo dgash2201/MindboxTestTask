@@ -1,4 +1,4 @@
-using FiguresLibrary.Figures;
+п»їusing FiguresLibrary.Figures;
 
 namespace FiguresLibrary.Tests
 {
@@ -18,7 +18,7 @@ namespace FiguresLibrary.Tests
         [InlineData(3.0, 4.0, -5.0)]
         public void ThrowsIfSideIsNegative(double first, double second, double third)
         {
-            var message = $"Треугольник со сторонами {first}, {second}, {third} создан успешно, хотя некоторые из них отрицательные";
+            var message = $"РўСЂРµСѓРіРѕР»СЊРЅРёРє СЃРѕ СЃС‚РѕСЂРѕРЅР°РјРё {first}, {second}, {third} СЃРѕР·РґР°РЅ СѓСЃРїРµС€РЅРѕ, С…РѕС‚СЏ РЅРµРєРѕС‚РѕСЂС‹Рµ РёР· РЅРёС… РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рµ";
             Assert.Throws<ArgumentException>(() => new Triangle(first, second, third));
         }
 
@@ -26,7 +26,7 @@ namespace FiguresLibrary.Tests
         [InlineData(3.0, 4.0, 7.0)]
         public void ThrowsIfTriangleUnequalityNotMet(double first, double second, double third)
         {
-            var message = $"Треугольник со сторонами {first}, {second}, {third} создан успешно, хотя не соблюдено неравенство треугольника";
+            var message = $"РўСЂРµСѓРіРѕР»СЊРЅРёРє СЃРѕ СЃС‚РѕСЂРѕРЅР°РјРё {first}, {second}, {third} СЃРѕР·РґР°РЅ СѓСЃРїРµС€РЅРѕ, С…РѕС‚СЏ РЅРµ СЃРѕР±Р»СЋРґРµРЅРѕ РЅРµСЂР°РІРµРЅСЃС‚РІРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°";
             Assert.Throws<ArgumentException>(() => new Triangle(first, second, third));
         }
 

@@ -1,9 +1,9 @@
-using System;
+п»їusing System;
 using System.IO;
 
 namespace FiguresLibrary.Figures
 {
-    /// <summary>Треугольник</summary>
+    /// <summary>РўСЂРµСѓРіРѕР»СЊРЅРёРє</summary>
     public class Triangle : IFigure
     {
         private readonly double _first;
@@ -11,22 +11,22 @@ namespace FiguresLibrary.Figures
         private readonly double _third;
 
         /// <summary>
-        /// Треугольник прямоугольный, если a^2 + b^2 = c^2, где c - длина наибольшой стороны треугольника
+        /// РўСЂРµСѓРіРѕР»СЊРЅРёРє РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№, РµСЃР»Рё a^2 + b^2 = c^2, РіРґРµ c - РґР»РёРЅР° РЅР°РёР±РѕР»СЊС€РѕР№ СЃС‚РѕСЂРѕРЅС‹ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
         /// </summary>
         public bool IsRight => Math.Abs(_first * _first + _second * _second - _third * _third) < double.Epsilon;
 
         public double Area => CalculateArea();
 
-        /// <summary>Создать треугольник</summary>
-        /// <param name="first">Длина первой стороны. Положительное число</param>
-        /// <param name="second">Длина второй стороны. Положительное число</param>
-        /// <param name="third">Длина третьей стороны. Положительное число</param>
+        /// <summary>РЎРѕР·РґР°С‚СЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРє</summary>
+        /// <param name="first">Р”Р»РёРЅР° РїРµСЂРІРѕР№ СЃС‚РѕСЂРѕРЅС‹. РџРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С‡РёСЃР»Рѕ</param>
+        /// <param name="second">Р”Р»РёРЅР° РІС‚РѕСЂРѕР№ СЃС‚РѕСЂРѕРЅС‹. РџРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С‡РёСЃР»Рѕ</param>
+        /// <param name="third">Р”Р»РёРЅР° С‚СЂРµС‚СЊРµР№ СЃС‚РѕСЂРѕРЅС‹. РџРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С‡РёСЃР»Рѕ</param>
         /// <exception cref="ArgumentException"></exception>
         public Triangle(double first, double second, double third)
         {
             if (first <= 0 || second <= 0 || third <= 0)
             {
-                throw new ArgumentException($"Невозможно создать треугольник с данными сторонами: {first}, {second}, {third} - какие-то из них неположительные");
+                throw new ArgumentException($"РќРµРІРѕР·РјРѕР¶РЅРѕ СЃРѕР·РґР°С‚СЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРє СЃ РґР°РЅРЅС‹РјРё СЃС‚РѕСЂРѕРЅР°РјРё: {first}, {second}, {third} - РєР°РєРёРµ-С‚Рѕ РёР· РЅРёС… РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рµ");
             }
 
             var sides = new double[3] { first, second, third };
@@ -34,7 +34,7 @@ namespace FiguresLibrary.Figures
 
             if (sides[2] >= sides[0] + sides[1])
             {
-                throw new ArgumentException($"Невозможно создать треугольник с данными сторонами: {first}, {second}, {third} - не соблюдено неравенство треугольника");
+                throw new ArgumentException($"РќРµРІРѕР·РјРѕР¶РЅРѕ СЃРѕР·РґР°С‚СЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРє СЃ РґР°РЅРЅС‹РјРё СЃС‚РѕСЂРѕРЅР°РјРё: {first}, {second}, {third} - РЅРµ СЃРѕР±Р»СЋРґРµРЅРѕ РЅРµСЂР°РІРµРЅСЃС‚РІРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°");
             }
                 
             _first = sides[0];
@@ -42,7 +42,7 @@ namespace FiguresLibrary.Figures
             _third = sides[2];
         }
         
-        /// <summary>Вычисление площади треугольника</summary>
+        /// <summary>Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°</summary>
         private double CalculateArea()
         {
             double semiperimeter = (_first + _second + _third) / 2.0;

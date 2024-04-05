@@ -1,35 +1,35 @@
-using System;
+п»їusing System;
 using System.IO;
 
 namespace FiguresLibrary.Figures
 {
     /// <summary>
-    /// Круг
+    /// РљСЂСѓРі
     /// </summary>
     public class Circle : IFigure
     {
         private readonly double _radius;
 
         /// <summary>
-        /// Радиус круга
+        /// Р Р°РґРёСѓСЃ РєСЂСѓРіР°
         /// </summary>
         public double Radius => _radius;
 
         /// <summary>
-        /// Площадь круга
+        /// РџР»РѕС‰Р°РґСЊ РєСЂСѓРіР°
         /// </summary>
         public double Area => CalculateArea();
 
         /// <summary>
-        /// Создать круг
+        /// РЎРѕР·РґР°С‚СЊ РєСЂСѓРі
         /// </summary>
-        /// <param name="radius">Длина радиуса. Положительное число</param>
-        /// <exception cref="ArgumentException">Если радиус меньше или равен нулю</exception>
+        /// <param name="radius">Р”Р»РёРЅР° СЂР°РґРёСѓСЃР°. РџРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С‡РёСЃР»Рѕ</param>
+        /// <exception cref="ArgumentException">Р•СЃР»Рё СЂР°РґРёСѓСЃ РјРµРЅСЊС€Рµ РёР»Рё СЂР°РІРµРЅ РЅСѓР»СЋ</exception>
         public Circle(double radius)
         {
             if (radius <= 0)
             {
-                throw new ArgumentException($"Нельзя создать круг с таким радиусом : {radius} - неположительное число");
+                throw new ArgumentException($"РќРµР»СЊР·СЏ СЃРѕР·РґР°С‚СЊ РєСЂСѓРі СЃ С‚Р°РєРёРј СЂР°РґРёСѓСЃРѕРј : {radius} - РЅРµРїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С‡РёСЃР»Рѕ");
             }
                 
             _radius = radius;

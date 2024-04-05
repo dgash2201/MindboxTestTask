@@ -1,12 +1,12 @@
-namespace FiguresLibrary.Figures
+п»їnamespace FiguresLibrary.Figures
 {
     /// <summary>
-    /// Интерфейс фигуры
+    /// РРЅС‚РµСЂС„РµР№СЃ С„РёРіСѓСЂС‹
     /// </summary>
     public interface IFigure
     {
         /// <summary>
-        /// Площадь фигуры
+        /// РџР»РѕС‰Р°РґСЊ С„РёРіСѓСЂС‹
         /// </summary>
         public double Area { get; }
     }
